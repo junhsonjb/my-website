@@ -2,6 +2,46 @@
   /*  This is not a permanent fix, I just don't want this to be
       ugly right now, but this is NOT RESPONSIVE DON'T DO This
   */
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 2%;
+  margin-bottom: 5%;
+}
+
+/* .email-me a:active {
+  text-decoration: none;
+}
+
+.email-me a:visited {
+  text-decoration: none;
+} */
+
+.email-me a:link {
+  text-decoration: none;
+  color: green;
+}
+
+/* .email-me a:hover {
+  text-decoration: none;
+} */
+
+
+
+.bing {
+  color: #407060;
+}
+
+.email-me a {
+  color: green;
+}
+
+.email-me a:hover {
+  text-decoration: none;
+  color: green;
+}
+
+ /* a:active, a:visited, a:link {
+   text-decoration: none;
+ } */
+
+::selection {
+  background: #ff9900;
 }

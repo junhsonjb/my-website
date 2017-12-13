@@ -38,6 +38,12 @@ What am I building this site for?
   - I'll make it more beautiful later
   - Now, I have to actually start coding it
 
+  What's Next?
+  ------
+  This is where I'll put the to-do list for the next commit. This is where I'll put the stuff I need to do next
+  - Highlight important words about yourself
+  - fix the middle-position error. Right now, you're using percentages in CSS to get the text where you want it, but you're gonna have to find out how to use bootstrap to do that to make it look nice on phones and smaller screens/devices
+
   Let's get it going!! 🔥🔥🔥
   ========
   _(I'll use this is until I come up with a better catch phrase, smh)_
