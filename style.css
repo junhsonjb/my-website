@@ -4,6 +4,34 @@
   */
   margin-top: 2%;
   margin-bottom: 5%;
+  font-family: 'Roboto Mono', monospace;
+  font-family: 'PT Mono', monospace;
+}
+
+/* @-webkit-keyframes snowflakes {
+  0% {top:10%}
+  50% {top: 45%}
+  100% {top:100%}
+}
+
+@keyframes snowflakes {
+  0% {top:10%;}
+  50% {top: 45%;}
+  100% {top:100%;}
+} */
+
+/* .snow {
+  color: white;
+  font-size: 3em;
+
+  animation: snowflakes 10s linear infinite;
+  -webkit-animation: snowflakes 10s linear infinite;
+} */
+
+/* Try to make some kind of Christmas/New Year's Theme */
+body {
+  /* color: green; */
+  background: #90d3f9 !important;
 }
 
 /* .email-me a:active {
@@ -16,26 +44,32 @@
 
 .email-me a:link {
   text-decoration: none;
-  color: green;
+  color: #8600FD;
+}
+
+.junhson {
+  text-decoration: bold;
+}
+
+.highlight {
+  color: #8600FD;
 }
 
 /* .email-me a:hover {
   text-decoration: none;
 } */
 
-
-
 .bing {
   color: #407060;
 }
 
 .email-me a {
-  color: green;
+  color: #8600FD;
 }
 
 .email-me a:hover {
   text-decoration: none;
-  color: green;
+  color: #8600FD;
 }
 
  /* a:active, a:visited, a:link {
@@ -43,5 +77,6 @@
  } */
 
 ::selection {
+  /* Make the color of the highlight orange */
   background: #ff9900;
 }
