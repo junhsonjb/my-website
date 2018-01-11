@@ -29,6 +29,6 @@ function runner(request, response) {
 var server = http.createServer(runner);
 
 /* set the server to listen at the defined port and hostname */
-server.listen(port, hostname, () => {
+server.listen(process.env.PORT || port, () => {
   console.log(`Server Running at http://${hostname}:${port}`);
 });
