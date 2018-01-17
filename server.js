@@ -1,9 +1,15 @@
 /* Dependecies */
-var http = require('http');
-var fs = require('fs');
+const http = require('http');
+const fs = require('fs');
+const express = require('express');
 
-var hostname = '127.0.0.1'; //just the place to host it at
-var port = 3000; //the port
+/* 'app' (express variable) declaration and its middleware */
+const app = express();
+app.use(express.static('public'));
+
+/* Just some constant values contained here */
+const hostname = '127.0.0.1'; //just the place to host it at
+const port = 3000; //the port
 
 /* Function to call when user requests a page that doesn't exist */
 function send404(response) {
