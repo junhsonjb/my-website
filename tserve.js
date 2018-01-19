@@ -13,6 +13,7 @@ const success = "app running on port " + port + "!";
 /* declare my express app */
 const app = express();
 
+/* tell express that we want to use static files in the 'public' folder */
 app.use(express.static('public'));
 
 /* General 404 method */
@@ -22,7 +23,7 @@ function send404(response) {
   response.end();
 }
 
-/* function to run on the get method for '/' route */
+/* function to run on the get method for '/resume' route */
 function resumePDF(request, response) {
   const resume = "./files/resume.pdf";
   fs.readFile(resume, function(err, data) {
@@ -31,10 +32,18 @@ function resumePDF(request, response) {
   });
 }
 
+/* this is the method that handles responses to/for the home page */
 function runner(request, response) {
-  response.send("This is cool");
+  //response.writeHead(200, {"Content-Type" : "text/html"});
+  /* const index = "/index.html"; */
+  const emoji = "/emoji.html"; //the homepage with emojis in it
+  fs.readFile(emoji, function(err, data) {
+    response.contentType("text/html");
+    response.send(data);
+  });
 }
 
 app.get('/', runner);
+app.get('/resume', resumePDF);
 
 app.listen(port, () => console.log(success));
