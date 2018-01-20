@@ -24,13 +24,7 @@ function send404(response) {
 }
 
 /* function to run on the get method for '/resume' route */
-function resumePDF(request, response) {
-  const resume = "./files/resume.pdf";
-  fs.readFile(resume, function(err, data) {
-    response.contentType("application/pdf");
-    response.send(data);
-  });
-}
+//...
 
 /* this is the method that handles responses to/for the home page */
 function runner(request, response) {
@@ -43,7 +37,16 @@ function runner(request, response) {
   });
 }
 
+function writeresume(request, response) {
+  const resume = "./public/files/resume.pdf";
+  fs.readFile(resume, function(err, data) {
+    response.contentType("application/pdf");
+    response.send(data);
+  });
+}
+
 app.get('/', runner);
-app.get('/resume', resumePDF);
+
+app.get('/resume', writeresume);
 
 app.listen(port, () => console.log(success));
