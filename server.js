@@ -13,10 +13,8 @@ const success = "app running on port " + port + "!";
 /* declare my express app */
 const app = express();
 
-/* Just some constant values contained here */
-const hostname = '127.0.0.1'; //just the place to host it at
-const port = 3000; //the port
-const success = `Server Running at http://${hostname}:${port}`
+/* tell express that we want to use static files in the 'public' folder */
+app.use(express.static('public'));
 
 /* General 404 method */
 function send404(response) {
@@ -25,41 +23,30 @@ function send404(response) {
   response.end();
 }
 
-function resumePDF(request, response) {
-  const resume = "./files/resume.pdf";
+/* function to run on the get method for '/resume' route */
+//...
+
+/* this is the method that handles responses to/for the home page */
+function runner(request, response) {
+  //response.writeHead(200, {"Content-Type" : "text/html"});
+  /* const index = "/index.html"; */
+  const emoji = "./public/emoji.html"; //the homepage with emojis in it
+  fs.readFile(emoji, function(err, data) {
+    response.contentType("text/html");
+    response.send(data);
+  });
+}
+
+function writeresume(request, response) {
+  const resume = "./public/files/resume.pdf";
   fs.readFile(resume, function(err, data) {
     response.contentType("application/pdf");
     response.send(data);
   });
 }
 
-/* when called, this function will serve up the user's requests or send a 404 msg */
-function runner(request, response) {
-
-  /* Server Code here */
-  //old server code (WITHOUT EXPRESS)
-  // response.writeHead(200, {"Content-Type" : "text/html"});
-  // fs.createReadStream("./index.html").pipe(response);
-
-  const index = "./index.html";
-  fs.readFile(index, function(err, data) {
-    response.contentType("text/html");
-    response.send(data);
-  });
-
-
-}
-
-// Original Running Code (WITHOUT EXPRESS)
-// /* call the runner function on a server variable to create a server */
-// var server = http.createServer(runner);
-//
-// /*  tell the server variable to listen at either the defined port or the
-//     one defined by the environment in which the code is running */
-// server.listen(process.env.PORT || port, () => {
-//   console.log(`Server Running at http://${hostname}:${port}`);
-// });
-
 app.get('/', runner);
-app.get('/resume', resumePDF);
-app.listen(process.env.PORT || port, () => console.log(success));
+
+app.get('/resume', writeresume);
+
+app.listen(port, () => console.log(success));
