@@ -49,4 +49,4 @@ app.get('/', runner);
 
 app.get('/resume', writeresume);
 
-app.listen(port, () => console.log(success));
+app.listen(process.env.PORT || port, () => console.log(success));
