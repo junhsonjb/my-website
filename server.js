@@ -30,8 +30,8 @@ function send404(response) {
 function runner(request, response) {
   //response.writeHead(200, {"Content-Type" : "text/html"});
   /* const index = "/index.html"; */
-  const emoji = "./public/emoji.html"; //the homepage with emojis in it
-  fs.readFile(emoji, function(err, data) {
+  const index = "./public/index.html"; //the homepage with emojis in it
+  fs.readFile(index, function(err, data) {
     response.contentType("text/html");
     response.send(data);
   });
