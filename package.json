@@ -16,8 +16,5 @@
   "bugs": {
     "url": "https://github.com/junhsonjb/my-website/issues"
   },
-  "homepage": "https://github.com/junhsonjb/my-website#readme",
-  "dependencies": {
-    "express": "^4.16.2"
-  }
+  "homepage": "https://github.com/junhsonjb/my-website#readme"
 }
