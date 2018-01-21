@@ -1,18 +1,24 @@
-/* Dependecies */
+/* This file will hold test server code */
+
+/* requires go here */
+const express = require('express');
 const http = require('http');
 const fs = require('fs');
-const express = require('express');
 
-/* 'app' (express variable) declaration and its middleware */
+/* some helpful constants */
+const hostname = '127.0.0.1';
+const port = 3000;
+const success = "app running on port " + port + "!";
+
+/* declare my express app */
 const app = express();
-app.use(express.static('public'));
 
 /* Just some constant values contained here */
 const hostname = '127.0.0.1'; //just the place to host it at
 const port = 3000; //the port
 const success = `Server Running at http://${hostname}:${port}`
 
-/* Function to call when user requests a page that doesn't exist */
+/* General 404 method */
 function send404(response) {
   response.writeHead(404, {"Content-Type" : "text/plain"});
   response.write("Status Code 404: File Not Found");
